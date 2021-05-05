@@ -1,0 +1,29 @@
+{
+  "name": "outcast-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server.js nodemon"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevinPask/Outcast-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DevinPask/Outcast-Project/issues"
+  },
+  "homepage": "https://github.com/DevinPask/Outcast-Project#readme",
+  "dependencies": {
+    "dotenv": "^8.3.0",
+    "express": "^4.17.1",
+    "mysql2": "^2.2.5",
+    "node": "^16.0.0",
+    "nodemon": "^2.0.7",
+    "sequelize": "^6.6.2"
+  }
+}
