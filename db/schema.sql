@@ -2,6 +2,7 @@ DROP TABLE IF EXISTS quiz;
 
 CREATE TABLE quiz (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
+  cat_number INTEGER NOT NULL,
   category VARCHAR(30) NOT NULL,
   question TEXT NOT NULL,
   correct_answer VARCHAR(50) NOT NULL,
