@@ -1,0 +1,26 @@
+<link rel="stylesheet" href="css/highscore.css">
+<div class="container">
+<h1>Highscores</h1>
+
+<!-- If highscores is an array of objects -->
+<ul>
+{{#each scores}}
+<li>
+    {{name}}:{{score}}
+</li>
+{{/each}}
+</ul>
+</div>
+                
+<!-- If just plain array of numbers or strings 
+<ul>
+{{#each scores as |score| }}
+<li>
+    
+   {{score}}
+</li>
+
+
+{{/each}}                    
+</ul>
+-->

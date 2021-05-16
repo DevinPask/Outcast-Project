@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/DevinPask/Outcast-Project#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.3",
     "bulma": "^0.9.2",
     "dotenv": "^8.3.0",
     "express": "^4.17.1",

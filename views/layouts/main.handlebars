@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" type="text/css" href="/style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -12,7 +12,9 @@
 </head>
 
 <body class="body">
-  <header>
+  <!-- NAVBAR WITH BUTTONS
+
+  <header class="header">
     <nav class="navbar-item is-transparent" role="navigation" aria-label="main navigation">
       <button class="button is-medium">
         <span class="icon">
@@ -21,46 +23,16 @@
         <span>BOX OFFICE </span>
       </button>
 
-      <!-- COMMENTED OUT DROP DOWN CATEGORY SEARCH 
-
-            <div class="navbar-item has-dropdown is-hoverable is-centered">
-              <a class="navbar-link">
-                CHANGE CATEGORY
-              </a>
-      
-              <div class="navbar-dropdown">
-                <a class="navbar-item">
-                  Comedy
-                </a>
-                <a class="navbar-item">
-                  Horror
-                </a>
-                <a class="navbar-item">
-                  Action
-                </a>
-                <a class="navbar-item">
-                  Sci-Fi
-                </a>
-                <a class="navbar-item">
-                  Romance
-                </a>
-                <a class="navbar-item">
-                  Drama 
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  Random Choice 
-                </a>
-              </div>
-            </div>
-          </div> 
-          -->
-
       <div class="navbar-end">
         <div class="navbar-item">
           <div class="buttons">
             <button class="button is-medium">
-              <span><a href="highscores.html">HIGHSCORES</a></span>
+              {{#unless highscores}}
+              <span><a href="/highscores">HIGHSCORES</a></span>
+              {{/unless}}
+              {{#if highscores}}
+              <span><a href="/">BACK TO QUIZ</a></span>
+              {{/if}}
               <span class="icon">
                 <i class="fa fa-film" aria-hidden="true"></i>
               </span>
@@ -71,6 +43,7 @@
       </div>
       </div>
     </nav>
+    -->
     <!-- Navbar ends -->
 
   </header>
@@ -79,12 +52,12 @@
   {{{body}}}
 
 
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
-  integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
-  crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="/main.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/main.js"></script>
 </body>
 
 </html>

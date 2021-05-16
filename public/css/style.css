@@ -1,0 +1,129 @@
+
+*::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;   
+   }
+   
+   :root {
+       --hue-neutral: 200;
+       --hue-wrong: 0;
+       --hue-correct: 145;
+   }
+   
+    #main {
+        border-color: black;
+        border-style: solid;
+        border-width: 40px 20px 100px 20px;
+        background-color: rgb(159, 159, 159);
+        border-radius: 10px;
+        position: relative;
+    }
+
+   body{
+    --hue: var(--hue-neutral);
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(97, 0, 0, 0.756);
+   }
+   
+   body.correct {
+       --hue: var(--hue-correct);
+   }
+   
+   body.wrong {
+       --hue: var(--hue-wrong);
+   }
+
+   .card-header-title.is-centered {
+    font-size: 32px;
+    justify-content: center;
+    color: black;
+    background-color: cornsilk;
+}
+
+   .container {
+        width: 50%;
+       max-width: 65%;
+       background-color: white;
+       border-radius: 5px;
+       padding: 10px;
+       box-shadow: 0 0 10px 2px;
+       border-color: black;
+       border-top: 20px;
+   }
+   
+#question-container {
+    font-family: inherit;
+    font-size: 30px;
+    text-align: center;
+    padding-top: 5%;
+    color: black;
+}
+
+   .btn-grid {
+       display: grid;
+       justify-content: center;
+       justify-items: center;
+       grid-template-columns: repeat(2, auto);
+       gap: 10px;
+       margin: 20px 0;
+       width: inherit;
+       padding-bottom: 5%;
+      
+   }
+
+   .btn {
+       
+       --hue: var(--hue-neutral);
+       border: 1px solid hsl(var(--hue), 100%, 30%);
+       background-color: hsl(var(--hue), 100%, 20%);
+       border-radius: 5px;
+       padding: 5px 10px;
+       color: white;
+       outline: none;
+      
+   }
+
+   .btn:hover {
+       border-color: black;
+       opacity: 50%;
+   }
+
+   .btn.correct {
+       --hue: var(--huhe-correct);
+       color: black;
+   }
+
+   .btn.wrong {
+    --hue: var(--hue-wrong);
+}
+
+.start-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hide {
+    display: none;
+}
+
+.card-footer {
+    justify-content: space-evenly;
+}
+
+.card-footer-item {
+    background-color: rgb(97, 0, 0) ;
+    position: absolute;
+}

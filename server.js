@@ -8,13 +8,12 @@ const exphbs = require('express-handlebars');
 // Sets up the Express App
 // =============================================================
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 
 // Sets Handlebars as the default template engine
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
-
-
+app.use(express.static(__dirname + '/public'));
 
 // Sets up the sessions with the 'secret', 'resave', 'saveUninitialized' options
 /* app.use(
@@ -25,13 +24,35 @@ app.set('view engine', 'handlebars');
   })
 ); */
 
+// Connect to database
+/* const db = mysql.createConnection(
+    {
+      host: 'localhost',
+      // MySQL username,
+      user: 'root',
+      // {TODO: Add your MySQL password}
+      password: '',
+      database: 'inventory_db'
+    },
+    console.log(`Connected to the inventory_db database.`)
+  );
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
+*/
 
 app.get('/api/quiz', (req, res) =>{
-    const data = {name: 'Hello'}
+    const data = [{question:'question goes here', answers:['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'], correct:'Answer 2'}]
     res.json(data);
+})
+
+app.get('/highscores', (req, res) =>{
+    const data = [{name: 'Hello', score: 50}, {name: 'Goodbye', score: 100}]
+    res.render('highscores', {
+        scores:data, 
+        highscores:true
+    });
 })
 
 app.get('/', (req, res) => {
