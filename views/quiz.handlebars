@@ -1,56 +1,65 @@
 <section id="quiz-content" class="section">
-  <link rel="stylesheet" href="css/quiz.css">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="/css/all.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-
   <div id="main" class="container">
-    <h1 class="card-header card-header-title is-centered">WELCOME TO THE *GENRE* MOVIE QUIZ </h1>
+    <h1 class="quiz-header">*USERNAME_HERE* IS CURRENTLY PLAYING THE *MOVIE GENRE* QUIZ</h1>
     <div class="columns">
       <div id="question-container" class="column">
-        QUESTIONS
+        {{questions}}*QUESTION APPEARS HERE*
       </div>
     </div>
 
     <section id="answers" class="btn-grid">
       <div class="row">
-        <button class="btn">ANSWER ONE</button>
+        <button class="btn">{{answers}}ANSWER1</button>
       </div>
-      <br>
+      
       <div class="row">
-        <button class="btn">ANSWER TWO</button>
+        <button class="btn">{{answers}}ANSWER2</button>
       </div>
-      <br>
+      
       <div class="row">
-        <button class="btn">ANSWER THREE</button>
+        <button class="btn">{{answers}}ANSWER3</button>
       </div>
-      <br>
+      
       <div class="row">
-        <button class="btn">ANSWER FOUR</button>
+        <button class="btn">{{answers}}ANSWER4</button>
       </div>
     </section>
-
-    <div class="card-footer">
-      <i class="fa fa-backward" aria-hidden="true"></i>
-      <i class="fa fa-stop" aria-hidden="true"></i>
-      <i class="fa fa-play" aria-hidden="true"></i>
-      <i class="fa fa-pause" aria-hidden="true"></i>
-      <i class="fa fa-forward" aria-hidden="true"></i>
-
+    <!--
+      <div class="buttons are-large">
+      <button class="button is-black">
+      <span class="icon">
+        <i class="fa fa-backward fa-2x" aria-hidden="true"></i>
+      </span>
+      </button>
+      <button id="start-btn" class="button is-black">
+      <span class="icon">
+        <i class="fa fa-play fa-2x" aria-hidden="true"></i>
+      </span>
+      </button>
+      <button class="button is-black">
+      <a href="/highscores">
+      <span class="icon">
+        <i class="fa fa-forward fa-2x" aria-hidden="true"></i>
+      </span>
+      </a>
+      </button>
+      </div>
+    -->
+     
       <!-- Box office button starts -->
-      <button class="button card-footer-item">
+      {{!-- 
+      <button class="button">
         <a href="/highscores">
           <span class="icon">
             <i class="fa fa-ticket" aria-hidden="true"></i>
           </span>
           <span>BOX OFFICE </span></a>
       </button>
-
+       --}}
 
       <!-- Highscore button starts -->
-      <button class="button card-footer-item">
+      <!--
+      <button class="button">
         {{#unless highscores}}
         <span><a href="/highscores">HIGHSCORES</a></span>
         {{/unless}}
@@ -62,7 +71,13 @@
         </span>
 
       </button>
-
-    </div>
+      -->
+    
   </div>
 </section>
+
+<modal id="score-input" class="hide">
+  <input>
+  <input>
+
+</modal>
