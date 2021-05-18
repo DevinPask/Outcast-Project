@@ -1,0 +1,83 @@
+<section id="quiz-content" class="section">
+  <div id="main" class="container">
+    <h1 class="quiz-header">{{username}} IS CURRENTLY PLAYING THE {{category}} QUIZ</h1>
+    <div class="columns">
+      <div id="question-container" class="column">
+        {{questions}}*QUESTION APPEARS HERE*
+      </div>
+    </div>
+
+    <section id="answers" class="btn-grid">
+      <div class="row">
+        <button id="answer1" class="btn">{{answer1}}ANSWER1</button>
+      </div>
+      
+      <div class="row">
+        <button id="answer2" class="btn">{{answer2}}ANSWER2</button>
+      </div>
+      
+      <div class="row">
+        <button id="answer3" class="btn">{{answer3}}ANSWER3</button>
+      </div>
+      
+      <div class="row">
+        <button id="answer4" class="btn">{{answer4}}ANSWER4</button>
+      </div>
+    </section>
+    <!--
+      <div class="buttons are-large">
+      <button class="button is-black">
+      <span class="icon">
+        <i class="fa fa-backward fa-2x" aria-hidden="true"></i>
+      </span>
+      </button>
+      <button id="start-btn" class="button is-black">
+      <span class="icon">
+        <i class="fa fa-play fa-2x" aria-hidden="true"></i>
+      </span>
+      </button>
+      <button class="button is-black">
+      <a href="/highscores">
+      <span class="icon">
+        <i class="fa fa-forward fa-2x" aria-hidden="true"></i>
+      </span>
+      </a>
+      </button>
+      </div>
+    -->
+     
+      <!-- Box office button starts -->
+      {{!-- 
+      <button class="button">
+        <a href="/highscores">
+          <span class="icon">
+            <i class="fa fa-ticket" aria-hidden="true"></i>
+          </span>
+          <span>BOX OFFICE </span></a>
+      </button>
+       --}}
+
+      <!-- Highscore button starts -->
+      <!--
+      <button class="button">
+        {{#unless highscores}}
+        <span><a href="/highscores">HIGHSCORES</a></span>
+        {{/unless}}
+        {{#if highscores}}
+        <span><a href="/">BACK TO QUIZ</a></span>
+        {{/if}}
+        <span class="icon">
+          <i class="fa fa-film" aria-hidden="true"></i>
+        </span>
+
+      </button>
+      -->
+    
+  </div>
+</section>
+
+<modal id="score-input" class="hide">
+  <input>
+  <input>
+
+</modal>

@@ -1,4 +1,4 @@
-const Question = require('./Question');
+const Question = require('./question');
 
 // // create associations
 // User.hasMany(Post, {

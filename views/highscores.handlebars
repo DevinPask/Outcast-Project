@@ -1,0 +1,34 @@
+<div id="score-container">
+    <p id="score-title">HIGHSCORES</p>
+
+    <!-- If highscores is an array of objects -->
+    <table class="score-table">
+
+        {{#each scores}}
+        <tr>
+            <td id="place" class="td">00</td>
+            <td id="name" class="td">{{name}}</td>
+            <td id="score" class="td">{{score}}</td>
+        </tr>
+        {{/each}}
+    </table>
+    <div class="btn-container">
+        <button class="hsbtn">TRY AGAIN</button>
+        <button class="hsbtn">LOGIN</button>
+    </div>
+</div>
+
+
+
+<!-- If just plain array of numbers or strings 
+<ul>
+{{#each scores as |score| }}
+<li>
+    
+   {{score}}
+</li>
+
+
+{{/each}}                    
+</ul>
+-->

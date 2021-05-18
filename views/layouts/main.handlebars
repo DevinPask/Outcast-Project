@@ -1,40 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Gruppo">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <title>Quiz Questions</title>
+</head>
+<body class="body">
+  {{{body}}}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.7.7/handlebars.min.js"
+    integrity="sha512-RNLkV3d+aLtfcpEyFG8jRbnWHxUqVZozacROI4J2F1sTaDqo1dPQYs01OMi1t1w9Y2FdbSCDSQ2ZVdAC8bzgAg=="
+    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/main.js"></script>
+</body>
 
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Outcast Movie Quiz</title>
-    {{!-- <link rel="stylesheet" href="/stylesheets/style.css"> --}}
-  </head>
-
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>
-          <a href="/">Outcast Movie Quiz</a>
-        </h1>
-        <nav>
-          {{!-- {{#if loggedIn}} --}}
-          <button id="logout" class="btn-no-style">logout</button>
-          {{!-- {{else}} --}}
-          <a href="/login">login</a>
-          {{!-- {{/if}} --}}
-        </nav>
-    
-      </header>
-
-      <main>
-        {{{ body }}}
-      </main>
-
-      <footer>
-        Go Outcasts!
-      </footer>
-
-    </div>
-    {{!-- {{#if loggedIn}} --}}
-    {{!-- <script src="/javascript/logout.js"></script> --}}
-    {{!-- {{/if}} --}}
-  </body>
 </html>

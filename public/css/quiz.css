@@ -1,0 +1,35 @@
+/* .container { 
+    border-color: rgb(0, 0, 0);
+    border-right-style: dashed;
+    border-left-style: dashed;
+    border-top-style: solid;
+    border-bottom-style: solid;
+    width: 55%;
+    text-align: center;
+   
+    }
+
+#question {
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+button {
+    border-radius: 4px;
+    background-color: #940000; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #940000c4;
+    transition-duration: 5ms;
+}
+*/
+
+/* Start over code began */
