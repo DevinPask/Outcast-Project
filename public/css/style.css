@@ -92,8 +92,8 @@ body{
 /* HIGHSCORES PAGE CSS */
 
 #score-container {
-    background-color: rgb(36 48 82);
-    opacity: 85%;
+    background-color: rgb(220, 220, 220);
+    opacity: 95%;
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 30px;
@@ -116,8 +116,7 @@ body{
    font-size: 25px;
    margin-left: auto;
    margin-right: auto;
-   position: sticky;
-   position: "-webkit-sticky";
+   position: relative;
   
 }
 
@@ -130,16 +129,102 @@ body{
     font-weight: bold;
 }
 
+.btn-container {
+
+}
+
 .hsbtn {
+
+    display: inline-block;
     font-family: "Gruppo";
     font-weight: bold;
     text-align: center;
     width: 100px;
     height: 50px;
     border-radius: 5px;
-    padding: 5px 10px;
     color: rgb(0, 0, 0);
-  
-
+   
 }
+
+/* LOGIN PAGE CSS STARTS */
+
+.welcome-container {
+    height: 40%;
+    width: 30%;
+    background-color: rgb(220, 220, 220);
+    opacity: 95%;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px 2px;
+    overflow: scroll;
+    padding: 25px ;
+    font-family: "Gruppo";
+}
+
+.welcome {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.login-container {
+    height: 40%;
+    width: 30%;
+    background-color: rgb(220, 220, 220);
+    opacity: 95%;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px 2px;
+}
+
+.field {
+    padding: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Gruppo";
+}
+
+.input {
+    font-family: "Gruppo";
+}
+
+.control {
+    padding-bottom: 20px;
+}
+
+.btn-footer {
+    
+}
+
+.ftbtn {
+    text-align: center;
+    font-family: "Gruppo";
+    font-weight: bold;
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.welcome {
+    text-align: center;
+    color: rgb(220, 220, 220);
+    border-bottom: black;
+    border-style: double;
+    background-color: rgb(13, 15, 72) ;
+    opacity: 90%;
+    padding-left: 10px;
+}
+
+.rules {
+    padding-top: 5%;
+}
+
+.quiz-rules-list, .new-user-list, .returning-user-list {
+    padding-left: 5%;
+}
+
+.quiz-rules, .new-user, .returning-user {
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+
 

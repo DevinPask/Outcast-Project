@@ -60,6 +60,12 @@ app.get('/', (req, res) => {
     res.render('quiz')
 })
 
+app.get('/login', (req, res) => {
+  res.render('login')
+})
+
+
+
 // Starts the server to begin listening
 // =============================================================
 app.listen(PORT, () => {
