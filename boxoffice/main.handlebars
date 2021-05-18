@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outcast Movie Quiz</title>
+    {{!-- <link rel="stylesheet" href="/stylesheets/style.css"> --}}
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>
+          <a href="/">Outcast Movie Quiz</a>
+        </h1>
+        <nav>
+          <div class="dropdown is-active">
+            <div class="dropdown-trigger">
+                <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+                    <span>Movie Genre</span>
+                    <span class="icon is-small">
+                        <i class="fas fa-angle-down" aria-hidden="true"></i>
+                    </span>
+                </button>
+            </div>
+            <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                <div class="dropdown-content">
+                    <a href="#" class="dropdown-item">
+                    Comedy
+                    </a>
+                    <a class="dropdown-item">
+                    Horror
+                    </a>
+                    <a href="#" class="dropdown-item">
+                    Action
+                    </a>
+                    <a href="#" class="dropdown-item">
+                    Fantasy/SciFi
+                    </a>
+                    <a href="#" class="dropdown-item">
+                    Romance
+                    </a>
+                    <a href="#" class="dropdown-item">
+                    Drama
+                    </a>
+                </div>
+            </div>
+        </div>
+        </nav>
+    
+      </header>
+
+      <main>
+        {{{ body }}}
+        <button class="button">Start Quiz</button>
+      </main>
+
+      <footer>
+        Go Outcasts!
+      </footer>
+
+    </div>
+    {{!-- {{#if loggedIn}} --}}
+    {{!-- <script src="/javascript/logout.js"></script> --}}
+    {{!-- {{/if}} --}}
+  </body>
+</html>
