@@ -64,6 +64,10 @@ app.get('/login', (req, res) => {
   res.render('login')
 })
 
+app.get('/box-office', (req, res) => {
+  res.render('box-office')
+})
+
 
 
 // Starts the server to begin listening

@@ -11,6 +11,126 @@ body{
     background-repeat: no-repeat;
 }
 
+/* LOGIN PAGE CSS STARTS */
+
+.welcome-container {
+    height: 40%;
+    width: 30%;
+    background-color: rgb(220, 220, 220);
+    opacity: 95%;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px 2px;
+    overflow: scroll;
+    padding: 25px ;
+    font-family: "Gruppo";
+}
+
+.welcome {
+    font-size: x-large;
+    font-weight: bolder;
+}
+
+.login-container {
+    height: 40%;
+    width: 30%;
+    background-color: rgb(220, 220, 220);
+    opacity: 95%;
+    color: rgb(0, 0, 0);
+    box-shadow: 0 0 10px 2px;
+}
+
+.field {
+    padding: 30px;
+    margin-right: auto;
+    margin-left: auto;
+    font-family: "Gruppo";
+}
+
+.input {
+    font-family: "Gruppo";
+}
+
+.control {
+    padding-bottom: 20px;
+}
+
+.btn-footer {
+    
+}
+
+.ftbtn {
+    text-align: center;
+    font-family: "Gruppo";
+    font-weight: bold;
+    width: 160px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+.welcome {
+    text-align: center;
+    color: rgb(220, 220, 220);
+    border-bottom: black;
+    border-style: double;
+    background-color: rgb(13, 15, 72) ;
+    opacity: 90%;
+    padding-left: 10px;
+}
+
+.rules {
+    padding-top: 5%;
+}
+
+.quiz-rules-list, .new-user-list, .returning-user-list {
+    padding-left: 5%;
+}
+
+.quiz-rules, .new-user, .returning-user {
+    text-align: center;
+    font-weight: bolder;
+    text-decoration: underline;
+}
+
+/* BOX OFFICE PAGE */
+
+.ticket-container {
+    background-image: url("https://www.jing.fm/clipimg/full/112-1127429_circus-clipart-carnival-booth-circus-ticket-booth-clipart.png");
+    /* background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw"); */
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 80%;
+    width: 40%;
+    position: relative;
+}
+
+.tickets {
+    position: absolute;
+    display: grid;
+    justify-content: center;
+    justify-items: center;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+    width: inherit;
+    padding-bottom: 5%;
+}
+
+.ticket-btn {
+    background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: none;
+    font-family: "Gruppo";
+    font-weight: bolder;
+    text-align: center;
+    color: rgb(0, 0, 0);
+ 
+}
+
+
+/* QUIZ PAGE CSS STARTS */
+
 #main {
   background-image: url("https://purepng.com/public/uploads/large/purepng.com-old-televisiontvtelecommunicationmonochromeblack-and-whittelevisionold-1421526535454mjn8j.png");
   background-position: center;
@@ -146,85 +266,7 @@ body{
    
 }
 
-/* LOGIN PAGE CSS STARTS */
 
-.welcome-container {
-    height: 40%;
-    width: 30%;
-    background-color: rgb(220, 220, 220);
-    opacity: 95%;
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 10px 2px;
-    overflow: scroll;
-    padding: 25px ;
-    font-family: "Gruppo";
-}
-
-.welcome {
-    font-size: x-large;
-    font-weight: bolder;
-}
-
-.login-container {
-    height: 40%;
-    width: 30%;
-    background-color: rgb(220, 220, 220);
-    opacity: 95%;
-    color: rgb(0, 0, 0);
-    box-shadow: 0 0 10px 2px;
-}
-
-.field {
-    padding: 30px;
-    margin-right: auto;
-    margin-left: auto;
-    font-family: "Gruppo";
-}
-
-.input {
-    font-family: "Gruppo";
-}
-
-.control {
-    padding-bottom: 20px;
-}
-
-.btn-footer {
-    
-}
-
-.ftbtn {
-    text-align: center;
-    font-family: "Gruppo";
-    font-weight: bold;
-    width: 160px;
-    height: 50px;
-    border-radius: 5px;
-}
-
-.welcome {
-    text-align: center;
-    color: rgb(220, 220, 220);
-    border-bottom: black;
-    border-style: double;
-    background-color: rgb(13, 15, 72) ;
-    opacity: 90%;
-    padding-left: 10px;
-}
-
-.rules {
-    padding-top: 5%;
-}
-
-.quiz-rules-list, .new-user-list, .returning-user-list {
-    padding-left: 5%;
-}
-
-.quiz-rules, .new-user, .returning-user {
-    text-align: center;
-    font-weight: bolder;
-    text-decoration: underline;
-}
 
 
 
