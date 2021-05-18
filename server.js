@@ -2,7 +2,7 @@
 // =============================================================
 const express = require('express');
 const exphbs = require('express-handlebars');
-
+const { Question } = require('./models')
 // Requires the 'express-session' module
 // const session = require(`express-session`);
 
@@ -43,21 +43,25 @@ app.use(express.json());
 app.use(express.static("public"));
 */
 
-app.get('/api/quiz', (req, res) =>{
-    const data = [{question:'question goes here', answers:['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'], correct:'Answer 2'}]
-    res.json(data);
+app.get('/api/quiz', (req, res) => {
+  // const data = [{question:'question goes here', answers:['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'], correct:'Answer 2'}]
+  Question.findAll({}).then(data => {
+    res.json(data)
+  }).catch(err => {
+    console.log(err)
+  })
 })
 
-app.get('/highscores', (req, res) =>{
-    const data = [{name: 'Hello', score: 50}, {name: 'Goodbye', score: 100}]
-    res.render('highscores', {
-        scores:data, 
-        highscores:true
-    });
+app.get('/highscores', (req, res) => {
+  const data = [{ name: 'Hello', score: 50 }, { name: 'Goodbye', score: 100 }]
+  res.render('highscores', {
+    scores: data,
+    highscores: true
+  });
 })
 
 app.get('/', (req, res) => {
-    res.render('quiz')
+  res.render('quiz')
 })
 
 app.get('/login', (req, res) => {

@@ -2,15 +2,20 @@
 
 const startButton = document.getElementById('start-btn')
 const questionContainerElement = document.getElementById('question-container')
-const questionElement = document.getElementById('question')
-const answerButtonsElement = document.getElementById('answer-buttons')
+const questionElement = document.getElementById('question-container')
+const answerButtonsElement1 = document.getElementById('answer1')
+const answerButtonsElement2 = document.getElementById('answer2')
+const answerButtonsElement3 = document.getElementById('answer3')
+const answerButtonsElement4 = document.getElementById('answer4')
 
-let shuffledQuestions, currentQuestionIndex
+let currentQuestionIndex = 0
+let shuffledQuestions;
 
-startButton.addEventListener('click', startQuiz);
-nextButton.addEventListener('click', () => {
-    nextQuestion()
-})
+
+// startButton.addEventListener('click', startQuiz);
+// nextButton.addEventListener('click', () => {
+//     nextQuestion()
+// })
 
 // Start quiz for specific genre user picks 
 let questions;
@@ -21,7 +26,7 @@ let timerEl = document.getElementById('timer');
 
 const startQuiz = () => {
     console.log('Started')
-    startButton.classList.add('hide')
+    // startButton.classList.add('hide')
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
@@ -29,26 +34,27 @@ const startQuiz = () => {
 
 
     // Display timer countdown while user taking quiz
-    timerEl.textContent = time
-    timer = setInterval(function () {
-        time = time - 1
-        timerEl.textContent = time + 'seconds'
-        if (time <= 0) {
-            nextQuestion()
-        }
-    }, 1000)
+    // timerEl.textContent = time
+    // timer = setInterval(function () {
+    //     time = time - 1
+    //     timerEl.textContent = time + 'seconds'
+    //     if (time <= 0) {
+    //         nextQuestion()
+    //     }
+    // }, 1000)
     //sectionEl.classList.remove("hide");
     //welcomeEl.classList.add("hide");
-    getQuestions();
+    nextQuestion();
 }
 
 const getQuestions = () => {
     fetch("/api/quiz").then(res => res.json()).then(data => {
         console.log(data);
         questions = data;
-        nextQuestion(data);
-
-    })
+        startQuiz();
+    }).catch(err => {
+        console.log(err)
+    }) 
 
 }
 
@@ -61,26 +67,30 @@ const nextQuestion = (data) => {
 }
 
 const showQuestion = (question) => {
+    console.log(question);
+    answerButtonsElement1.innerText = question.answer1
+    answerButtonsElement2.innerText = question.answer2
+    answerButtonsElement3.innerText = question.answer3
+    answerButtonsElement4.innerText = question.answer4
     questionElement.innerText = question.question
-    question.answers.forEach(answer => {
-        const button = document.createElement('button')
-        button.innerText = answer.text
-        button.classList.add('btn')
-        if (answer.correct) {
-            button.dataset.correct = answer.correct
-        }
-        button.addEventListener('click', selectAnswer)
-        answerButtonsElement.appendChild(button)
-    })
+    // question.answers.forEach(answer => {
+    //     const button = document.createElement('button')
+    //     button.innerText = answer.text
+    //     button.classList.add('btn')
+    //     if (answer.correct) {
+    //         button.dataset.correct = answer.correct
+    //     }
+    //     button.addEventListener('click', selectAnswer)
+    //     answerButtonsElement.appendChild(button)
+   
+    // })
 }
 
 const resetState = () => {
-    clearStatusClass(document.body)
-    nextButton.classList.add('hide')
-    while (answerButtonsElement.firstChild) {
-        answerButtonsElement.removeChild
-            (answerButtonsElement.firstChild)
-    }
+    // while (answerButtonsElement.firstChild) {
+    //     answerButtonsElement.removeChild
+    //         (answerButtonsElement.firstChild)
+    // }
 }
 
 // Check whether answer selected is correct/wrong
@@ -95,7 +105,7 @@ const checkAnswer = (e) => {
 }
 
 const setStatusClass = (element, correct) => {
-    clearStatusClass(element)
+   
     if (correct) {
         element.clasList.add('correct')
     } else {
@@ -133,4 +143,4 @@ const finalScore = (score) => {
 
 }
 
-startQuiz();
+getQuestions();
