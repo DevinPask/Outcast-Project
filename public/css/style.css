@@ -126,6 +126,7 @@ body{
     margin-right: auto;
     height: 100%;
     width: 40%;
+    position: relative;
 }
 
 .ticket-btn {
@@ -141,12 +142,13 @@ body{
     color: rgb(0, 0, 0);
 }
 
-p {
-    display: inline;
+#footer {
+    padding-bottom: 20px;
     text-align: center;
     font-family: "Gruppo";
     font-size: medium;
     font-weight: bolder;
+
 }
 
 /* QUIZ PAGE CSS STARTS */
