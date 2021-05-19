@@ -93,39 +93,32 @@ body{
 
 /* BOX OFFICE PAGE */
 
-.ticket-container {
+#ticket-container {
     background-image: url("https://www.jing.fm/clipimg/full/112-1127429_circus-clipart-carnival-booth-circus-ticket-booth-clipart.png");
-    /* background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw"); */
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 80%;
-    width: 40%;
     position: relative;
 }
 
-.tickets {
-    position: absolute;
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-    width: inherit;
-    padding-bottom: 5%;
+#tickets {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
+    width: 40%;
 }
 
 .ticket-btn {
+    text-align: center;
+    background: transparent;
     background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw");
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: none;
-    font-family: "Gruppo";
+    border: none;
+    width: 125px;
+    height: 70px;
     font-weight: bolder;
-    text-align: center;
     color: rgb(0, 0, 0);
- 
 }
 
 
@@ -159,6 +152,7 @@ body{
    }
    
 #question-container {
+    width: 100px;
     font-family: "Gruppo";
     font-size: 20px;
     font-weight: bold;
@@ -190,7 +184,7 @@ body{
 
    }
 
-.btn:hover {
+.btn:hover, .ticket-btn:hover {
     border-color: black;
     opacity: 50%;
    }
