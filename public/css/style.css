@@ -93,41 +93,65 @@ body{
 
 /* BOX OFFICE PAGE */
 
-.ticket-container {
-    background-image: url("https://www.jing.fm/clipimg/full/112-1127429_circus-clipart-carnival-booth-circus-ticket-booth-clipart.png");
-    /* background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw"); */
-    background-position: center;
+#box-office {
+    height: 60%;
+    width: 30%;
+    /* background-color: rgb(220, 220, 220);*/
+    background-color: white;
+    opacity: 95%;
+    color: rgb(0, 0, 0);
+    border-style: double;
+    box-shadow: 0 0 10px 2px;
+    /* background-image: url("https://www.jing.fm/clipimg/full/112-1127429_circus-clipart-carnival-booth-circus-ticket-booth-clipart.png"); */
+    /* background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-    height: 80%;
+    position: relative; */
+}
+ .box-office-header {
+     text-align: center;
+     font-family: "Gruppo";
+     font-size: xx-large;
+     color: rgb(220, 220, 220);
+     font-weight: bolder;
+     padding: 10px 5px 10px 5px;    
+     border-style: double;
+     background-color: rgb(13, 15, 72) ;
+     opacity: 90%;
+     box-shadow: 0 0 10px 2px;
+ }
+
+
+#tickets {
+    margin-left: auto;
+    margin-right: auto;
+    height: 100%;
     width: 40%;
     position: relative;
 }
 
-.tickets {
-    position: absolute;
-    display: grid;
-    justify-content: center;
-    justify-items: center;
-    grid-template-columns: repeat(2, auto);
-    gap: 10px;
-    margin: 20px 0;
-    width: inherit;
-    padding-bottom: 5%;
-}
-
 .ticket-btn {
-    background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw");
+    text-align: center;
+    background: transparent;
+    /* background-image: url("https://lh3.googleusercontent.com/proxy/RIMpixoSZUObG-IJBSsAVnyXfV67Sh0MnHjDc3rfMp9n2mG-7XfcZvlYA3IOzEjd5GnPSJE_IstzI4b0tTpgHG_MROxxT_xiR5Enchw"); */
+    background-image: url("https://previews.123rf.com/images/argus456/argus4561210/argus456121000044/15612752-admit-ticket-on-a-solid-white-background.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    background-color: none;
-    font-family: "Gruppo";
+    border: none;
+    width: 140px;
+    height: 80px;
     font-weight: bolder;
-    text-align: center;
     color: rgb(0, 0, 0);
- 
 }
 
+#bo-footer {
+    padding-bottom: 20px;
+    text-align: center;
+    font-family: "Gruppo";
+    font-size: medium;
+    font-weight: bolder;
+
+}
 
 /* QUIZ PAGE CSS STARTS */
 
@@ -159,6 +183,7 @@ body{
    }
    
 #question-container {
+    width: 100px;
     font-family: "Gruppo";
     font-size: 20px;
     font-weight: bold;
@@ -190,7 +215,7 @@ body{
 
    }
 
-.btn:hover {
+.btn:hover, .ticket-btn:hover {
     border-color: black;
     opacity: 50%;
    }
@@ -250,7 +275,7 @@ body{
 }
 
 .btn-container {
-
+    margin-top: 120px;
 }
 
 .hsbtn {
@@ -265,8 +290,3 @@ body{
     color: rgb(0, 0, 0);
    
 }
-
-
-
-
-
