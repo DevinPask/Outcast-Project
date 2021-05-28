@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 })
 
 // QUIZ
-router.get('/quiz', (req, res) => {
+router.get('/quizpage', (req, res) => {
   res.render('quiz')
 })
 
