@@ -12,14 +12,11 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/romance', (req, res) => {
+router.get('/Romance', (req, res) => {
   Question.findAll({
+    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
+    where: { category: 'Romance' },
   },
-  {
-    Where: {
-      category: 'Romance'
-    }
-  }
   )
     .then(dbQuestionData => res.json(dbQuestionData))
     .catch(err => {
@@ -28,14 +25,11 @@ router.get('/romance', (req, res) => {
     });
 });
 
-router.get('/horror', (req, res) => {
+router.get('/Horror', (req, res) => {
   Question.findAll({
+    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
+    where: { category: 'Horror' },
   },
-  {
-    Where: {
-      category: 'Horror'
-    }
-  }
   )
     .then(dbQuestionData => res.json(dbQuestionData))
     .catch(err => {
@@ -44,15 +38,11 @@ router.get('/horror', (req, res) => {
     });
 });
 
-router.get('/action', (req, res) => {
+router.get('/Action', (req, res) => {
   Question.findAll({
-    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4']
+    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
+    where: { category: 'Action' },
   },
-  {
-    Where: {
-      category: 'Action'
-    }
-  }
   )
     .then(dbQuestionData => res.json(dbQuestionData))
     .catch(err => {
@@ -61,15 +51,12 @@ router.get('/action', (req, res) => {
     });
 });
 
-router.get('/comedy', (req, res) => {
+router.get('/Comedy', (req, res) => {
   Question.findAll({
-    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4']
+    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
+    where: { category: 'Comedy' },
   },
-  {
-    Where: {
-      category: 'Comedy'
-    }
-  }
+
   )
     .then(dbQuestionData => res.json(dbQuestionData))
     .catch(err => {
@@ -80,15 +67,31 @@ router.get('/comedy', (req, res) => {
 
 router.get('/Fantasy/Sci-Fi', (req, res) => {
   Question.findAll({
-    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4']
+    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
+    where: { category: 'Fantasy/Sci-Fi' },
   },
-  {
-    Where: {
-      category: 'Fantasy/Sci-Fi'
-    }
-  }
+
   )
     .then(dbQuestionData => res.json(dbQuestionData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
+router.post('/', (req, res) => {
+  // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
+  User.create({
+    cat_number: req.body.cat_number,
+    category: req.body.category,
+    question: req.body.question,
+    correct_answer: req.body.correct_answer,
+    answer1: req.body.answer1,
+    answer2: req.body.answer2,
+    answer3: req.body.answer3,
+    answer4: req.body.answer4,
+  })
+    .then(dbUserData => res.json(dbUserData))
     .catch(err => {
       console.log(err);
       res.status(500).json(err);
