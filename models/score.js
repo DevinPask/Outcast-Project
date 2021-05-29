@@ -10,16 +10,18 @@ Score.init(
         primaryKey: true,
         autoIncrement: true
       },
-      Score: {
+      score: {
         type: DataTypes.INTEGER,
         allowNull: false,
         defaultValue: 1200
       },
-      uname: {
-        type: DataTypes.STRING,
-        allowNull: false,
-        defaultValue: "-"
-      },
+      user_id: {
+        type: DataTypes.INTEGER,
+        references: {
+          model: 'user',
+          key: 'id'
+        }
+      }
     },
     {
       sequelize,
