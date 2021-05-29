@@ -15,7 +15,10 @@ router.get('/', (req, res) => {
 
 // QUIZ
 router.get('/quizpage', (req, res) => {
-  res.render('quiz')
+  let category = req.query.category;
+  let username = 'ccamp';   // req.session.username
+  console.log(category);
+  res.render('quiz', {category, username, loggedIn: true})
 })
 
 // HIGH SCORES

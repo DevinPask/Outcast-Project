@@ -65,7 +65,7 @@ router.get('/Comedy', (req, res) => {
     });
 });
 
-router.get('/Fantasy/Sci-Fi', (req, res) => {
+router.get('/Sci-Fi', (req, res) => {
   Question.findAll({
     attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
     where: { category: 'Fantasy/Sci-Fi' },

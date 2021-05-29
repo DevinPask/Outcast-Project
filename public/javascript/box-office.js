@@ -14,9 +14,9 @@ btnRomance.addEventListener('click', (e) => {
     chooseCategoryHandler('Romance');
 });
 
-let btnSciFi = document.querySelector('#scifi-btn');
+let btnSciFi = document.querySelector('#sci-fi-btn');
 btnSciFi.addEventListener('click', (e) => {
-    chooseCategoryHandler('Fantasy/Sci-Fi');
+    chooseCategoryHandler('Sci-Fi');
 });
 
 let btnComedy = document.querySelector('#comedy-btn');
