@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Question, User, Score, } = require('../models');
-// const withAuth = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 // Login
 router.get('/login', (req, res) => {
@@ -14,7 +14,7 @@ router.get('/', (req, res) => {
 })
 
 // QUIZ
-router.get('/quizpage', (req, res) => {
+router.get('/quizpage', withAuth, (req, res) => {
   let category = req.query.category;
   let username = 'ccamp';   // req.session.username
   console.log(category);
@@ -22,7 +22,7 @@ router.get('/quizpage', (req, res) => {
 })
 
 // HIGH SCORES
-router.get('/highscores', (req, res) => {
+router.get('/highscores', withAuth, (req, res) => {
   res.render('highscores')
 })
 

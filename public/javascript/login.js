@@ -1,15 +1,13 @@
 // Sign Up
 async function signupFormHandler(event) {
     event.preventDefault();
-    const username = document.querySelector('#username-signup').value.trim();
-    const email = document.querySelector('#email-signup').value.trim();
-    const password = document.querySelector('#password-signup').value.trim();
-    if (username && email && password) {
+    const username = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
+    if (username && password) {
         const response = await fetch('/api/users', {
           method: 'post',
           body: JSON.stringify({
             username,
-            email,
             password
           }),
           headers: { 'Content-Type': 'application/json' }
@@ -18,25 +16,29 @@ async function signupFormHandler(event) {
         // check the response status
         if (response.ok) {
             console.log('success');
+            setTimeout(loginFormHandler(event), 5000);
         } else {
             alert(response.statusText);
+            console.log('error');
         }
     }  
 }
-document.querySelector('.signup-form').addEventListener('submit', signupFormHandler);
+document.querySelector('#signup').addEventListener('click', signupFormHandler);
 
 // Login
 async function loginFormHandler(event) {
     event.preventDefault();
     
-    const email = document.querySelector('#email-login').value.trim();
-    const password = document.querySelector('#password-login').value.trim();
-  
-    if (email && password) {
+    const username = document.querySelector('#username').value.trim();
+    const password = document.querySelector('#password').value.trim();
+    console.log('click login');
+    console.log(username, password);
+
+    if (username && password) {
       const response = await fetch('/api/users/login', {
         method: 'post',
         body: JSON.stringify({
-          email,
+          username,
           password
         }),
         headers: { 'Content-Type': 'application/json' }
@@ -46,7 +48,9 @@ async function loginFormHandler(event) {
         document.location.replace('/');
       } else {
         alert(response.statusText);
+        console.log('error');
       }
     }
   }
-  document.querySelector('.login-form').addEventListener('submit', loginFormHandler);
+
+  document.querySelector('#login').addEventListener('click', loginFormHandler);

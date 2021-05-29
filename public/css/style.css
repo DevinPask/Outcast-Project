@@ -161,7 +161,7 @@ body{
 
     }
 
-#box-office-link {
+.box-office-link {
     align-self: normal;
     margin-top: 15px;
     font-weight: bold;
@@ -174,7 +174,7 @@ body{
     box-shadow: 3px 4px rgb(71, 71, 71);
 }
 
-#box-office-link:hover {
+.box-office-link:hover {
     background-color: rgba(223, 223, 223, 0.651);
 }
 

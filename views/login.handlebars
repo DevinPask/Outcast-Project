@@ -31,18 +31,20 @@
 </div>
 
 <div class="login-container">
-    <div class="field">
+    <form class="field">
         <label class="label">Username</label>
         <div class="control">
-            <input class="input" type="text" placeholder="ENTER NEW OR EXISTING USERNAME">
+            <input class="input" id="username" type="text" placeholder="ENTER NEW OR EXISTING USERNAME">
         </div>
         <label class="label">Password</label>
         <div class="control">
-            <input class="input" type="email" placeholder="ENTER PASSWORD (8 CHRACTER MIN)">
+            <input class="input" id="password" type="text" placeholder="ENTER PASSWORD (8 CHRACTER MIN)">
         </div>
         <div class="btn-footer">
-            <button class="ftbtn login">LOGIN</button>
-            <button class="ftbtn clogin">CREATE LOGIN</button>
+            <button class="ftbtn login" id="login">LOGIN</button>
+            <button class="ftbtn signup" id="signup">CREATE LOGIN</button>
         </div>
-    </div>
+    </form>
 </div>
+
+<script src="/javascript/login.js"></script>
