@@ -33,28 +33,39 @@ router.get('/:id', (req, res) => {
     });
 });
 
+//signup Sign Up
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
-  User.create({
-    username: req.body.username,
-    password: req.body.password
+  User.findOne({
+    where: {
+      username: req.body.username
+    }
   })
+    .then(existingUser => {
+      if (existingUser) {
+        res.status(400).json({ message: 'Username already exists yo!'});
+        return;
+      }
 
-    // .then(dbUserData => res.json(dbUserData))
-
-    .then(dbUserData => {
-      req.session.save(() => {
-        req.session.user_id = dbUserData.id;
-        req.session.username = dbUserData.username;
-        req.session.loggedIn = true;
-    
-        res.json(dbUserData);
-      });
+      User.create({
+        username: req.body.username,
+        password: req.body.password
+      })
+        .then(dbUserData => {
+          req.session.save(() => {
+            req.session.user_id = dbUserData.id;
+            req.session.username = dbUserData.username;
+            req.session.loggedIn = true;
+        
+            res.json(dbUserData);
+          });
+        })
+        .catch(err => {
+          console.log(err);
+          res.status(500).json(err);
+        });
     })
-    .catch(err => {
-      console.log(err);
-      res.status(500).json(err);
-    });
+  
 });
 
 router.post('/login', (req, res) => {

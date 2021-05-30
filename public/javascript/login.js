@@ -3,6 +3,11 @@ async function signupFormHandler(event) {
     event.preventDefault();
     const username = document.querySelector('#username').value.trim();
     const password = document.querySelector('#password').value.trim();
+    
+    if (password.length < 4) {
+      alert('Password too short!');
+      return;
+    }
     if (username && password) {
         const response = await fetch('/api/users', {
           method: 'post',
@@ -19,7 +24,6 @@ async function signupFormHandler(event) {
             setTimeout(loginFormHandler(event), 5000);
         } else {
             alert(response.statusText);
-            console.log('error');
         }
     }  
 }
