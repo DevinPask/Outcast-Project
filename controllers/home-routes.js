@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../config/connection');
 const { Question, User, Score, } = require('../models');
+const { findAll } = require('../models/question');
 const withAuth = require('../utils/auth');
 
 // Login
@@ -17,14 +18,32 @@ router.get('/', (req, res) => {
 // QUIZ
 router.get('/quizpage', withAuth, (req, res) => {
   let category = req.query.category;
-  let username = 'ccamp';   // req.session.username
+  let username = req.session.username;
+  let user_id = req.session.user_id;
   console.log(category);
-  res.render('quiz', {category, username, loggedIn: true})
+  console.log(req.session);
+  res.render('quiz', {category, username, user_id, loggedIn: true})
 })
 
 // HIGH SCORES
 router.get('/highscores', withAuth, (req, res) => {
-  res.render('highscores')
+  Score.findAll({
+    attributes: ['score'],
+    include: [{
+      model: User,
+      attributes: ['username']
+    }]
+  })
+    .then(scoreData => {
+      const scores = scoreData.map(score => score.get({ plain: true }));
+      // score ranking
+      scores.sort(function(a,b){return parseInt(b.score)-parseInt(a.score)});
+      for (i=0; i<scores.length; i++) {
+        scores[i].rank = i+1;
+      }
+      res.render('highscores', {scores});
+    })
+  
 })
 
 module.exports = router;

@@ -302,6 +302,12 @@ body{
     width: 100px;
     height: 50px;
     border-radius: 5px;
-    color: rgb(0, 0, 0);
-   
+    color: rgb(0, 0, 0);   
+}
+
+#hs-link {
+    background-color: grey;
+    border-radius: 5px;
+    color: mediumblue;
+    padding: 10px;
 }

@@ -1,8 +1,8 @@
 <a class="box-office-link" href="/">Box Office</a>
 <section id="quiz-content" class="section">
   <div id="main" class="container">
-    <h1 class="quiz-header">{{username}} is currently playing the {{category}} quiz</h1>
-    <h2 class="quiz-header">Current Score: <span id='current-score'>0</span></h2>
+    <h1 class="quiz-header">{{username}} <span id="play">is currently playing</span> the {{category}} quiz</h1>
+    <h2 class="quiz-header"><span id="scoreText">Current</span> Score:  <span id='current-score'>0</span></h2>
     <div class="columns">
       <div id="question-container" class="column">
         {{questions}}*QUESTION APPEARS HERE*
@@ -27,6 +27,14 @@
       </div>
     </section>
     
+    <section id="highscores" class="btn-grid">
+      <div class="row">
+        <a id="hs-link" href="/highscores" class="btn">View High Scores</a>
+      </div>
+    </section>
+    
+    
+    
   </div>
 </section>
 
@@ -37,5 +45,8 @@
 </modal>
 
 <div id="cat" style="display: none;">{{category}}</div>
+<div id="user_id" style="display: none;">{{user_id}}</div>
+<div id="username" style="display: none;">{{username}}</div>
+
 
 <script src="/javascript/quiz.js"></script>

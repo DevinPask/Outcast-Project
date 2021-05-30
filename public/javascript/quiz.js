@@ -10,9 +10,14 @@ const answerButtonsElement2 = document.getElementById('answer2');
 const answerButtonsElement3 = document.getElementById('answer3');
 const answerButtonsElement4 = document.getElementById('answer4');
 const category = document.querySelector('#cat').innerHTML;
+const user_id = document.querySelector('#user_id').innerHTML;
+const username = document.querySelector('#username').innerHTML;
+document.querySelector('#highscores').style.display = 'none';
+
 
 let currentQuestionIndex = 0
 let shuffledQuestions;
+let gameFinish = 0;
 
 // Start quiz for specific genre user picks 
 let questions;
@@ -67,10 +72,10 @@ const setStatusClass = (element, correct) => {
         
 const checkAnswer = (choice) => {
     let isCorrect = choice.toLowerCase() === correctAnswer.toLowerCase();
-    if (isCorrect) {
+    if (isCorrect & gameFinish === 0) {
         console.log('correct!');
         score += 10;
-    } else {
+    } else if (gameFinish === 0) {
         console.log('wrong');
         score -= 5;
     }
@@ -88,13 +93,6 @@ Array.from(document.getElementsByClassName("btn")).forEach(function (btn) {
 });
 
 
-// End quiz - when they answer last question display buttons that link to other genres 
-
-// Get highschore and save to highscore page 
-const finalScore = (score) => {
-
-}
-
 // Loop through to next question
 const nextQuestion = () => {
 
@@ -104,20 +102,23 @@ const nextQuestion = () => {
     if (currentQuestionIndex < questions.length -1) {
         showQuestion(shuffledQuestions[currentQuestionIndex]);
         currentQuestionIndex++;
-    } else {
+    } else if (gameFinish === 0) {
+        gameFinish++;
         console.log('All Done');
         let qc = document.querySelector('#question-container');
         let ans = document.querySelector('#answers');
+        let hs = document.querySelector('#highscores');
         qc.style.display = 'none';
         ans.style.display = 'none';
+        hs.style.display = 'flex';
+        document.querySelector('#scoreText').innerHTML = 'Final';
+        document.querySelector('#play').innerHTML = 'has completed';
 
-        let username = document.querySelector('#username').innerText;
-        console.log(username);
         const response = fetch('/api/score/final-score', {
             method: 'post',
             body: JSON.stringify({
                 score,
-                username
+                user_id
             }),
             headers: { 'Content-Type': 'application/json' }
             });

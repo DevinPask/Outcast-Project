@@ -49,9 +49,8 @@ router.get('/', (req, res) => {
   router.post('/final-score', (req, res) => {
     // expects {score: 1200 user_id: 1}
     Score.create({
-      Score: req.body.Score,
-      uname: req.body.username,
-      id: req.body.id
+      score: req.body.score,
+      user_id: req.body.user_id
     })
       .then(dbScoreData => res.json(dbScoreData))
       .catch(err => {
@@ -59,6 +58,7 @@ router.get('/', (req, res) => {
         res.status(500).json(err);
       });
   });
+  
 
   router.put('/:id', (req, res) => {
     Score.update(
