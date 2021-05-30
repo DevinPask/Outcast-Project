@@ -45,10 +45,9 @@ async function loginFormHandler(event) {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        setTimeout(function() { document.location.replace('/'); }, 1000);
       } else {
         alert(response.statusText);
-        console.log('error');
       }
     }
   }

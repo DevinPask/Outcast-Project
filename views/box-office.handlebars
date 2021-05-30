@@ -1,4 +1,8 @@
+{{#if loggedIn}}
 <button class="box-office-link" id="logout">Logout</button>
+{{else}}
+<a href="/login" class="box-office-link">Login</a>
+{{/if}}
 <div id="box-office">
     <h1 class="box-office-header">BOX-OFFICE</h1>
     <div class="columns">
@@ -30,3 +34,6 @@
 </div>
 
 <script src="/javascript/box-office.js"></script>
+{{#if loggedIn}}
+<script src="/javascript/logout.js"></script>
+{{/if}}

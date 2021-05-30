@@ -10,7 +10,8 @@ router.get('/login', (req, res) => {
 
 // BOX OFFICE "/" - HOMEPAGE
 router.get('/', (req, res) => {
-  res.render('box-office')
+  console.log(req.session.loggedIn);
+  res.render('box-office', {loggedIn: req.session.loggedIn})
 })
 
 // QUIZ
