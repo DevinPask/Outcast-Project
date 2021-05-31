@@ -1,81 +1,49 @@
-// Dependencies
-// =============================================================
 const express = require('express');
-const exphbs = require('express-handlebars');
-const { Question } = require('./models')
-// Requires the 'express-session' module
-// const session = require(`express-session`);
+const routes = require('./controllers');
+const sequelize = require('./config/connection');
 
-// Sets up the Express App
-// =============================================================
+// Handlebars imports
+const helpers = require('./utils/helpers');
+const exphbs = require('express-handlebars');
+const hbs = exphbs.create( { helpers });
+const path = require('path');
+
+// Session imports
+const session = require('express-session');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+
+const sess = {
+  secret: 'Super secret secret',
+  cookie: {},
+  resave: false,
+  saveUninitialized: true,
+  store: new SequelizeStore({
+    db: sequelize
+  })
+};
+
+// App & Port
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Sets Handlebars as the default template engine
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
-app.set('view engine', 'handlebars');
-app.use(express.static(__dirname + '/public'));
-
-// Sets up the sessions with the 'secret', 'resave', 'saveUninitialized' options
-/* app.use(
-  session({
-    secret: 'This is a major secret!',
-    resave: false,
-    saveUninitialized: false
-  })
-); */
-
-// Connect to database
-/* const db = mysql.createConnection(
-    {
-      host: 'localhost',
-      // MySQL username,
-      user: 'root',
-      // {TODO: Add your MySQL password}
-      password: '',
-      database: 'inventory_db'
-    },
-    console.log(`Connected to the inventory_db database.`)
-  );
-
-app.use(express.urlencoded({ extended: true }));
+// express middleware
 app.use(express.json());
-app.use(express.static("public"));
-*/
+app.use(express.urlencoded({ extended: true }));
 
-app.get('/api/quiz', (req, res) => {
-  // const data = [{question:'question goes here', answers:['Answer 1', 'Answer 2', 'Answer 3', 'Answer 4'], correct:'Answer 2'}]
-  Question.findAll({}).then(data => {
-    res.json(data)
-  }).catch(err => {
-    console.log(err)
+// handlebars middleware
+app.use(express.static(path.join(__dirname, 'public'))); // handlebars middleware
+
+// session middleware
+app.use(session(sess));
+
+// handlebars stuff
+app.engine('handlebars', hbs.engine);
+app.set('view engine', 'handlebars');
+
+app.use(routes);
+
+sequelize.sync( {force: false})
+  .then( () => {
+    app.listen(PORT, () => console.log(`App listening on port ${PORT}!`));
   })
-})
 
-app.get('/highscores', (req, res) => {
-  const data = [{ name: 'Hello', score: 50 }, { name: 'Goodbye', score: 100 }]
-  res.render('highscores', {
-    scores: data,
-    highscores: true
-  });
-})
-
-app.get('/', (req, res) => {
-  res.render('quiz')
-})
-
-app.get('/login', (req, res) => {
-  res.render('login')
-})
-
-app.get('/box-office', (req, res) => {
-  res.render('box-office')
-})
-
-
-
-// Starts the server to begin listening
-// =============================================================
-app.listen(PORT, () => {
-  console.log('App listening on PORT ' + PORT);
-});
