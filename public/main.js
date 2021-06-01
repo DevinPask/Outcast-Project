@@ -31,17 +31,15 @@ const startQuiz = () => {
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
 
-
-
     // Display timer countdown while user taking quiz
-    // timerEl.textContent = time
-    // timer = setInterval(function () {
-    //     time = time - 1
-    //     timerEl.textContent = time + 'seconds'
-    //     if (time <= 0) {
-    //         nextQuestion()
-    //     }
-    // }, 1000)
+    timerEl.textContent = time
+    timer = setInterval(function () {
+        time = time - 1
+        timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
+        if (time <= 0) {
+            time = 1
+        }
+    }, 1000)
     //sectionEl.classList.remove("hide");
     //welcomeEl.classList.add("hide");
     nextQuestion();
@@ -104,6 +102,29 @@ const checkAnswer = (e) => {
 
 }
 
+
+// /*
+// const checkAnswer = (event) => {
+//     var choice = (event.target.textContent[0]);
+//     if (choice === correctAnswer && 15 >= time >= 10) {
+//         score = 10
+//     } else if (choice === correctAnswer && 9 >= time >= 5) {
+//         score = 5
+//     } else if (choice === correctAnswer && 4 >= time >= 0) {
+//         score = 2
+//     } else (choice !== correctAnswer); {
+//         score = score - 5
+//     }
+// };
+// */
+
+/* 
+Array.from(document.getElementsByClassName("answer")).forEach(function (btn) {
+    console.log(btn);
+    btn.onclick = checkAnswer;
+});
+*/
+
 const setStatusClass = (element, correct) => {
    
     if (correct) {
@@ -114,27 +135,6 @@ const setStatusClass = (element, correct) => {
 }
 
 
-/*
-const checkAnswer = (event) => {
-    var choice = (event.target.textContent[0]);
-    if (choice === correctAnswer && 15 >= time >= 10) {
-        score = 10
-    } else if (choice === correctAnswer && 9 >= time >= 5) {
-        score = 5
-    } else if (choice === correctAnswer && 4 >= time >= 0) {
-        score = 2
-    } else (choice !== correctAnswer); {
-        score = score - 5
-    }
-};
-*/
-
-/* 
-Array.from(document.getElementsByClassName("answer")).forEach(function (btn) {
-    console.log(btn);
-    btn.onclick = checkAnswer;
-});
-*/
 
 // End quiz - when they answer last question display buttons that link to other genres 
 

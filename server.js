@@ -53,7 +53,7 @@ app.get('/api/quiz', (req, res) => {
 })
 
 app.get('/highscores', (req, res) => {
-  const data = [{ name: 'Hello', score: 50 }, { name: 'Goodbye', score: 100 }]
+  const data = [{ name: 'ASYSE', score: 105 }, { name: 'GENNY', score: 90 }]
   res.render('highscores', {
     scores: data,
     highscores: true
