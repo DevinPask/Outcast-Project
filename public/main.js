@@ -31,15 +31,7 @@ const startQuiz = () => {
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
 
-    // Display timer countdown while user taking quiz
-    timerEl.textContent = time
-    timer = setInterval(function () {
-        time = time - 1
-        timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
-        if (time <= 0) {
-            time = 1
-        }
-    }, 1000)
+
     //sectionEl.classList.remove("hide");
     //welcomeEl.classList.add("hide");
     nextQuestion();
