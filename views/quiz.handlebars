@@ -1,7 +1,8 @@
+<a class="box-office-link" href="/">Box Office</a>
 <section id="quiz-content" class="section">
   <div id="main" class="container">
-    <h1 class="quiz-header">{{username}}IS CURRENTLY PLAYING THE {{category}} QUIZ</h1>
-    <h1 id="timer"></h1>
+    <h1 class="quiz-header">{{username}} <span id="play">is currently playing</span> the {{category}} quiz</h1>
+    <h2 class="quiz-header"><span id="scoreText">Current</span> Score:  <span id='current-score'>0</span></h2>
     <div class="columns">
       <div id="question-container" class="column">
         {{questions}}
@@ -25,54 +26,14 @@
         <button id="answer4" class="btn">{{answer4}}</button>
       </div>
     </section>
-    <!--
-      <div class="buttons are-large">
-      <button class="button is-black">
-      <span class="icon">
-        <i class="fa fa-backward fa-2x" aria-hidden="true"></i>
-      </span>
-      </button>
-      <button id="start-btn" class="button is-black">
-      <span class="icon">
-        <i class="fa fa-play fa-2x" aria-hidden="true"></i>
-      </span>
-      </button>
-      <button class="button is-black">
-      <a href="/highscores">
-      <span class="icon">
-        <i class="fa fa-forward fa-2x" aria-hidden="true"></i>
-      </span>
-      </a>
-      </button>
+    
+    <section id="highscores" class="btn-grid">
+      <div class="row">
+        <a id="hs-link" href="/highscores" class="btn">View High Scores</a>
       </div>
-    -->
-     
-      <!-- Box office button starts -->
-      {{!-- 
-      <button class="button">
-        <a href="/highscores">
-          <span class="icon">
-            <i class="fa fa-ticket" aria-hidden="true"></i>
-          </span>
-          <span>BOX OFFICE </span></a>
-      </button>
-       --}}
-
-      <!-- Highscore button starts -->
-      <!--
-      <button class="button">
-        {{#unless highscores}}
-        <span><a href="/highscores">HIGHSCORES</a></span>
-        {{/unless}}
-        {{#if highscores}}
-        <span><a href="/">BACK TO QUIZ</a></span>
-        {{/if}}
-        <span class="icon">
-          <i class="fa fa-film" aria-hidden="true"></i>
-        </span>
-
-      </button>
-      -->
+    </section>
+    
+    
     
   </div>
 </section>
@@ -82,3 +43,10 @@
   <input>
 
 </modal>
+
+<div id="cat" style="display: none;">{{category}}</div>
+<div id="user_id" style="display: none;">{{user_id}}</div>
+<div id="username" style="display: none;">{{username}}</div>
+
+
+<script src="/javascript/quiz.js"></script>

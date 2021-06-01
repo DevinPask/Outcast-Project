@@ -4,31 +4,19 @@
     <!-- If highscores is an array of objects -->
     <table class="score-table">
 
-        {{#each scores}}
+        {{#each scores as |score|}}
         <tr>
-            <td id="place" class="td">01</td>
-            <td id="name" class="td">{{name}}</td>
-            <td id="score" class="td">{{score}}</td>
+            <td id="place" class="td">{{this.rank}}</td>
+            <td id="name" class="td">{{score.user.username}}</td>
+            <td id="score" class="td">{{this.score}}</td>
         </tr>
         {{/each}}
     </table>
     <div class="btn-container">
-        <button class="hsbtn">TRY AGAIN</button>
-        <button class="hsbtn">LOGOUT</button>
+        <button id="try-again" class="hsbtn">TRY AGAIN</button>
+        <button id='logout' class="hsbtn">LOGOUT</button>
     </div>
 </div>
 
-
-
-<!-- If just plain array of numbers or strings 
-<ul>
-{{#each scores as |score| }}
-<li>
-    
-   {{score}}
-</li>
-
-
-{{/each}}                    
-</ul>
--->
+<script src="/javascript/highscores.js"></script>
+<script src="/javascript/logout.js"></script>
