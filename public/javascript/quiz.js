@@ -32,6 +32,15 @@ const startQuiz = () => {
     shuffledQuestions = questions.sort(() => Math.random() - .5)
     currentQuestionIndex = 0
     questionContainerElement.classList.remove('hide')
+        // Display timer countdown while user taking quiz
+        timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
+        timer = setInterval(function () {
+            time = time - 1
+            timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
+            if (time <= 0) {
+               nextQuestion()
+            }
+        }, 1000)
     nextQuestion();
 }
 
@@ -97,8 +106,12 @@ Array.from(document.getElementsByClassName("btn")).forEach(function (btn) {
 const nextQuestion = () => {
 
     let elem = document.querySelector('#current-score');
+    if (time === 0) {
+        score -= 5
+    }
     elem.innerHTML = score;
-    
+    time = 15;
+    timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
     if (currentQuestionIndex < questions.length -1) {
         showQuestion(shuffledQuestions[currentQuestionIndex]);
         currentQuestionIndex++;
