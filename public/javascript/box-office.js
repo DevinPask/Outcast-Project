@@ -28,3 +28,8 @@ let btnAction = document.querySelector('#action-btn');
 btnAction.addEventListener('click', (e) => {
     chooseCategoryHandler('Action');
 });
+
+let btnAll = document.querySelector('#all-btn');
+btnAll.addEventListener('click', (e) => {
+    chooseCategoryHandler('All');
+});

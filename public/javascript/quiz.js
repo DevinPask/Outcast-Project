@@ -29,19 +29,21 @@ let timerEl = document.getElementById('timer');
 const startQuiz = () => {
     
     // startButton.classList.add('hide')
-    shuffledQuestions = questions.sort(() => Math.random() - .5)
-    currentQuestionIndex = 0
-    questionContainerElement.classList.remove('hide')
-        // Display timer countdown while user taking quiz
-        timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
-        timer = setInterval(function () {
-            time = time - 1
-            timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
-            if (time <= 0) {
-               nextQuestion()
-            }
-        }, 1000)
-    nextQuestion();
+    shuffledQuestions = questions.sort(() => Math.random() - .5);
+    currentQuestionIndex = 0;
+
+    questionContainerElement.classList.remove('hide');
+    // Display timer countdown while user taking quiz
+    timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`;
+    timer = setInterval(function () {
+        time = time - 1;
+        timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`;
+        if (time <= 0) {
+            nextQuestion(timer);
+        }
+    }, 1000);
+
+    nextQuestion(timer);
 }
 
 const getQuestions = () => {
@@ -97,13 +99,13 @@ Array.from(document.getElementsByClassName("btn")).forEach(function (btn) {
     btn.onclick = (event) => { 
         let value = event.target.textContent;
         checkAnswer(value);
-        nextQuestion();
+        nextQuestion(timer);
     }
 });
 
 
 // Loop through to next question
-const nextQuestion = () => {
+const nextQuestion = (timer) => {
 
     let elem = document.querySelector('#current-score');
     if (time === 0) {
@@ -111,11 +113,16 @@ const nextQuestion = () => {
     }
     elem.innerHTML = score;
     time = 15;
-    timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`
+    
     if (currentQuestionIndex < questions.length -1) {
         showQuestion(shuffledQuestions[currentQuestionIndex]);
         currentQuestionIndex++;
+        timerEl.textContent = `NEXT QUESTION IN ${time} SECONDS`;
     } else if (gameFinish === 0) {
+        clearInterval(timer);
+        console.log('gameFinish', gameFinish);
+
+        timerEl.textContent = '';
         gameFinish++;
         console.log('All Done');
         let qc = document.querySelector('#question-container');
