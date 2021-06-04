@@ -31,6 +31,13 @@
     <div id="bo-footer" class="row">
         <p>SELECT YOUR TICKET TO BEGIN THE QUIZ</p>
     </div>
+    {{#if loggedIn}}
+    <section id="bo-hsl" class="button">
+      <div class="row">
+        View High Scores
+      </div>
+    </section>
+    {{/if}}
 </div>
 
 <script src="/javascript/box-office.js"></script>

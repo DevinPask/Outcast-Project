@@ -33,3 +33,11 @@ let btnAll = document.querySelector('#all-btn');
 btnAll.addEventListener('click', (e) => {
     chooseCategoryHandler('All');
 });
+
+const directScores = (event) => {
+    event.preventDefault();
+  
+    location.replace("/highscores");
+  }
+  
+  document.querySelector("#bo-hsl").addEventListener("click", directScores);
