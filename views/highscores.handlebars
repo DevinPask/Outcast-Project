@@ -1,17 +1,19 @@
-<div id="score-container">
-    <p id="score-title">HIGHSCORES</p>
+<div id="hs-box">
+    <div id="score-container">
+        <p id="score-title">HIGHSCORES</p>
 
-    <!-- If highscores is an array of objects -->
-    <table class="score-table">
+        <!-- If highscores is an array of objects -->
+        <table class="score-table">
 
-        {{#each scores as |score|}}
-        <tr>
-            <td id="place" class="td">{{this.rank}}</td>
-            <td id="name" class="td">{{score.user.username}}</td>
-            <td id="score" class="td">{{this.score}}</td>
-        </tr>
-        {{/each}}
-    </table>
+            {{#each scores as |score|}}
+            <tr>
+                <td id="place" class="td">{{this.rank}}</td>
+                <td id="name" class="td">{{score.user.username}}</td>
+                <td id="score" class="td">{{this.score}}</td>
+            </tr>
+            {{/each}}
+        </table>
+    </div>
     <div class="btn-container">
         <button id="try-again" class="hsbtn">TRY AGAIN</button>
         <button id='logout' class="hsbtn">LOGOUT</button>

@@ -219,9 +219,9 @@ body{
     justify-items: center;
     grid-template-columns: repeat(2, auto);
     gap: 10px;
-    margin: 20px 0;
+    margin: 20px 0 10px 0;
     width: inherit;
-    padding-bottom: 5%;
+    padding-bottom: 5px;
    }
 
 .btn {
@@ -264,7 +264,7 @@ body{
     text-align: center;
     color: rgb(0, 0, 0);
     padding: 30px;
-    width: 25%;
+    width: 100%;
     overflow: scroll;
     height: 50%; 
     box-shadow: 0 0 10px 2px;
@@ -297,7 +297,9 @@ body{
 }
 
 .btn-container {
-    margin-top: 120px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
 }
 
 .hsbtn {

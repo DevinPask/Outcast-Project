@@ -4,43 +4,43 @@ const { Score, User } = require('../models');
 const scoredata = [
     {
       user_id: 1,
-      score: 1200
+      score: 10
     },
     {
         user_id: 2,
-        score: 1100
+        score: 15
     },
     {
         user_id: 3,
-        score: 1400
+        score: 20
     },
     {
         user_id: 4,
-        score: 1000
+        score: 30
     },
     {
         user_id: 5,
-        score: 2200
+        score: 65
     },
     {
         user_id: 6,
-        score: 5000
+        score: 45
     },
     {
         user_id: 7,
-        score: 1700
+        score: 30
     },
     {
         user_id: 8,
-        score: 1800
+        score: 20
     },
     {
         user_id: 9,
-        score: 3500
+        score: 55
     },
     {
         user_id: 10,
-        score: 2600
+        score: 5
     }
   ];
   

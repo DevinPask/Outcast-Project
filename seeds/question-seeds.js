@@ -500,7 +500,114 @@ const questionData = [
         answer2: 'Notting Hill',
         answer3: 'Punch Drunk Love',
         answer4: 'The Philadelphia Story'
-    }
+    },
+
+
+
+
+
+
+    {
+        cat_number: 1,
+        category: 'All',
+        question: 'Which horror film was the first-ever of its genre to be nominated for a Best Picture Oscar?',
+        correct_answer: 'The Exorcist',
+        answer1: 'Jaws',
+        answer2: 'Halloween',
+        answer3: 'The Exorcist',
+        answer4: 'Rosemarys Baby'
+    },
+    {
+        cat_number: 2,
+        category: 'All',
+        question: 'National Lampoons Christmas Vacation was released when?',
+        correct_answer: '1989',
+        answer1: '1986',
+        answer2: '1987',
+        answer3: '1988',
+        answer4: '1989'
+    },
+    {
+        cat_number: 3,
+        category: 'All',
+        question: 'Who directed the 2001 thriller, "Jurassic Park III"?',
+        correct_answer: 'Joe Johnston',
+        answer1: 'Stephen Spielberg',
+        answer2: 'JJ Abrams',
+        answer3: 'J.A. Bayona',
+        answer4: 'Joe Johnston'
+    },
+    {
+        cat_number: 4,
+        category: 'All',
+        question: 'What is the name of the robot that is featured in the 1956 classic science fiction film "Forbidden Planet"?',
+        correct_answer: 'Robby the Robot',
+        answer1: 'Clank',
+        answer2: 'Sojourner',
+        answer3: 'Johnny 5',
+        answer4: 'Robby the Robot'
+    },
+    {
+        cat_number: 5,
+        category: 'All',
+        question: 'Winner of eight Teen Choice Awards, in what year was "The Notebook" released?',
+        correct_answer: '2004',
+        answer1: '2008',
+        answer2: '2004',
+        answer3: '2002',
+        answer4: '2012'
+    },
+    {
+        cat_number: 6,
+        category: 'All',
+        question: 'How long did it take to film The Blair Witch Project?',
+        correct_answer: '8 Days',
+        answer1: '3 Days',
+        answer2: '8 Days',
+        answer3: '4 Weeks',
+        answer4: '6 Months'
+    },
+    {
+        cat_number: 7,
+        category: 'All',
+        question: 'What hotel was used in "Beverly Hills Cop II"?',
+        correct_answer: 'Hollywood Roosevelt',
+        answer1: 'Hollywood Roosevelt',
+        answer2: 'Dream HollyWood',
+        answer3: 'W Hollywood',
+        answer4: 'Mondrian Los Angeles'
+    },
+    {
+        cat_number: 8,
+        category: 'All',
+        question: 'What does Chris drop at the end of "Platoon"?',
+        correct_answer: 'A Hand Grenade',
+        answer1: 'A Rifle',
+        answer2: 'A Letter',
+        answer3: 'A Hand Grenade',
+        answer4: 'A Bible'
+    },
+    {
+        cat_number: 9,
+        category: 'All',
+        question: 'Loosely based on a short story by Philip K. Dick, who directed the 2002 hit "Minority Report"?',
+        correct_answer: 'Steven Spielberg',
+        answer1: 'George Lucas',
+        answer2: 'Steven Spielberg',
+        answer3: 'James Cameron',
+        answer4: 'Francis Ford Coppola'
+    },
+    {
+        cat_number: 10,
+        category: 'All',
+        question: 'Which of these romance films is set during World War II ? ',
+        correct_answer: 'A Matter of Life and Death',
+        answer1: 'A Matter of Life and Death',
+        answer2: 'Notting Hill',
+        answer3: 'Punch Drunk Love',
+        answer4: 'The Philadelphia Story'
+    },
+
 ];
 
 const seedQuestions = () => Question.bulkCreate(questionData);

@@ -79,6 +79,20 @@ router.get('/Sci-Fi', (req, res) => {
     });
 });
 
+router.get('/All', (req, res) => {
+  Question.findAll({
+    attributes: ['id', 'cat_number', 'category', 'question', 'correct_answer', 'answer1', 'answer2', 'answer3', 'answer4'],
+    where: { category: 'All' },
+  },
+
+  )
+    .then(dbQuestionData => res.json(dbQuestionData))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
+
 router.post('/', (req, res) => {
   // expects {username: 'Lernantino', email: 'lernantino@gmail.com', password: 'password1234'}
   User.create({
